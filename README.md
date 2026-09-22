@@ -1,17 +1,16 @@
 - GOOGLE_API_KEY = 
 - GROQ_API_KEY = 
+- OPENAI_API_KEY =
+- TAVILY_API_KEY =
+- LANGSMITH_API_KEY = 
 
-OPENAI_API_KEY =
 
-TAVILY_API_KEY = 
 
-LANGSMITH_API_KEY = 
-
-DATABASE = 
-PORT = 
-HOST =
-USER = 
-PASSWORD = 
+  - DATABASE = 
+  - PORT = 
+  - HOST =
+  - USER = 
+  - PASSWORD = 
 
 --------------------------------- Models from each operators
 gemini-3.1-flash-lite
