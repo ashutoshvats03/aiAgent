@@ -6,16 +6,18 @@
 
 
 
-  - DATABASE = 
-  - PORT = 
-  - HOST =
-  - USER = 
-  - PASSWORD = 
+- DATABASE = 
+- PORT = 
+- HOST =
+- USER = 
+- PASSWORD = 
 
+```text
 --------------------------------- Models from each operators
 gemini-3.1-flash-lite
 qwen/qwen3.8-27b
 gpt-4o-mini
+
 
 ---------------------------------- List of models from groq for free
 groq/compound-mini
@@ -31,3 +33,4 @@ canopylabs/orpheus-arabic-saudi
 canopylabs/orpheus-v1-english
 openai/gpt-oss-safeguard-20b
 openai/gpt-oss-20b
+```
