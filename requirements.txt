@@ -1,0 +1,9 @@
+langchain
+langchain-groq
+langchain-community
+langchain-core
+langgraph
+ipykernel
+pydantic
+psycopg2
+pandas
