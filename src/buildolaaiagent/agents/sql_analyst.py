@@ -73,7 +73,6 @@ def prompt_query_context(state: AgentSchema) -> AgentSchema:
 
     return state
 
-
 def generate_sql(state: AgentSchema) -> AgentSchema:
 
     prompt = state.prompt_query_context
@@ -139,9 +138,7 @@ def execute_sql(state: AgentSchema) -> AgentSchema:
 
     return state
     
-
-# Represntation NOde
-
+# Represntation Node
 def represent_final_answer(state: AgentSchema) -> AgentSchema:
     execution_result = state.sql_query_exec_result
     curated_question = state.curated_ques

@@ -19,7 +19,7 @@ llm = pick_llm("medium")
 llm_router = llm.with_structured_output(RouteSchema)
 
 #------------------------Data graph agent------------------------
-def router_node(state:DataAgentSchema):
+def router_node(state:DataAgentSchema ):
     message = state.messages[-1].content
     router_response_dict = llm_router.invoke(message).model_dump()
     router_response = router_response_dict['answer']
@@ -29,8 +29,6 @@ def router_node(state:DataAgentSchema):
 def etl_node(state:DataAgentSchema):
     message = state.messages[-1].content
     
-    message = state.messages[-1].content
-
     response = etl_analyst.invoke(
              {"messages":[HumanMessage(content=f"""
             {message}
