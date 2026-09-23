@@ -403,7 +403,6 @@ Install aiAgent using one of the following methods:
 ❯ uv init
 ❯ uv venv
 ❯ uv add -r requirements.txt
-❯ python main.py
 ```
 
 ---
