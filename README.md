@@ -161,22 +161,31 @@ class DataAgentSchema(BaseModel):
     route_response: str               # Router decision (sql/etl)
 ```
 ```python
-from agents.data_agent import data_agent
-from langchain_core.messages import HumanMessage
-
-# Example: Extract data from API
-response = data_agent.invoke({
-    "messages": [
-        HumanMessage(content="""
-            I want to extract the data from the API endpoint 
-            'https://pokeapi.co/api/v2/pokemon' and save it to 
-            data/extract folder in CSV format
-        """)
-    ],
-    "route_response": ""
-})
-
-print(response)
+def laya_agent(task: str):
+    payload = {
+        "state": {"task" : task},
+        "questions": {
+            "department": {
+                "type": "choice",
+                "instructions": "Which department should handle this request?",
+                "criteria": {
+                    "SQL": (
+                        "Use when the task involves querying, reading, aggregating, "
+                        "filtering, or updating existing structured tables within a database. "
+                        "Examples: fetching user metrics, running analytical queries, writing joins, "
+                        "or creating specific database views/reports."
+                    ),
+                    "ETL": (
+                        "Use when the task involves extracting data from external sources/APIs, "
+                        "cleansing/transforming formats, building automated batch or streaming pipelines, "
+                        "syncing disparate systems, or loading data into a data warehouse/lake."
+                    )
+                }
+            }
+        }
+    }
+    response = requests.post(url, json=payload)
+    return response
 ```
 
 Responsibility:
