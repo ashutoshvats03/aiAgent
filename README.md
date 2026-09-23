@@ -228,6 +228,33 @@ Components:
 
 ---
 
+## 🏗️ Architecture
+
+The system follows a hierarchical agent architecture:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    Data Agent (Router)                      │
+│         Routes user queries to appropriate sub-agents       │
+└────────────────────┬────────────────────────────────────────┘
+                     │
+         ┌───────────┴───────────┐
+         │                       │
+         ▼                       ▼
+    ┌──────────────┐        ┌──────────────┐
+    │ SQL Analyst  │        │ ETL Analyst  │
+    │   Agent      │        │   Agent      │
+    └──────────────┘        └──────────────┘
+         │                       │
+         ├─► Query Curation      ├─► Extract Load
+         ├─► Schema Context      ├─► Transform Load
+         ├─► SQL Generation      └─► Code Execution
+         ├─► Safety Validation   
+         ├─► Query Execution     
+         └─► Answer Generation   
+```
+
+----
 ## 📁 Project Structure
 
 ```sh
